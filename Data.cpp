@@ -1,11 +1,4 @@
 ﻿#include "Data.h"
-using namespace std;
-
-//Data::Data() {}
-//Data::~Data() {
-//	randomPath.~vector<int>();
-//	visited.~vector<bool>();
-//}
 
 void Data::load(string name) {
 
@@ -14,7 +7,6 @@ void Data::load(string name) {
 
 	if (file.good() == false) {
 		cout << "Wrong path to the file" << endl;
-		exit(0);
 	}
 	if (file.good() == true) {
 		file >> instance;
@@ -55,13 +47,13 @@ void Data::display() {
 	}
 }
 
-//dwa kontenerki, jeden na boole, drugi na wierzcho³ki, zmienna na wagi
+//dwa kontenery, jeden na boole, drugi na wierzcholki, zmienna na wagi
 void Data::findRandomPath() {
 	int j = 0;
 	do {
 		int vertex = abs((rand() % (number)) + 0);
 
-		//sprawdzenie czy wylosowany wierzcho³ek jest nieodwiedzony
+		//sprawdzenie czy wylosowany wierzcholek jest nieodwiedzony
 		if (visited[vertex] == false) {
 
 			randomPath[j] = vertex;

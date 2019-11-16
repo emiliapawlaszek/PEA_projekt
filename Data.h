@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -5,7 +6,6 @@
 #include <ctime>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
 
 class Data
@@ -14,13 +14,10 @@ public:
 	string instance;
 	long int number;
 	int** graph;
-	int sumOfEdgesFromRandomPath;
+	int sumOfEdgesFromRandomPath; 
 
 	vector<int> randomPath;
 	vector<bool> visited;
-
-	//Data();
-	//~Data();
 
 	void load(string name);
 	void display();

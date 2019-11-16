@@ -1,50 +1,35 @@
 ﻿#include "BruteForce.h"
-#include "Data.h"
-
-BruteForce::BruteForce() {}
-
-BruteForce::~BruteForce() {
-
-}
 
 void BruteForce::load(string name) {
 
 	fstream file;
-	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_projekt\\rsrc\\" + name, ios::in);
-
-	if (file.good() == false) {
-		cout << "Wrong path to the file" << endl;
-		exit(0);
-	}
-	if (file.good() == true) {
-
+	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_proj\\rsrc\\" + name, ios::in);
+	if (file.good())
+	{
 		file >> instance;
-		file >> number;
-		graph = new int* [number];
-		visited = new bool[number];
-		weightOfpresentPath = new int[number];
-		weightOfAllPossiblePaths = new int[number];
-
-
-		for (int i = 0; i < number; i++) {
-			graph[i] = new int[number];
+		file >> size;
+		graph.resize(size);
+		for (int i = 0; i < size; i++) {
+			graph[i].resize(size);
 		}
 
-		for (int i = 0; i < number; i++) {
-			for (int j = 0; j < number; j++) {
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
 				file >> graph[i][j];
 			}
 		}
 	}
-	file.close();
+	else {
+		cout << "Wrong path to the file" << endl;
+	}
 }
 
 int BruteForce::findPath() {
 
-	int startVertex = 0; //wirzcho³ek pocz¹tkowy
+	int startVertex = 0; //wirzcholek poczatkowy
 	vector<int> vertex;
 
-	for (int i = 0; i < number; i++) {
+	for (int i = 0; i < size; i++) {//bez zerowego
 		if (i != startVertex) {
 			vertex.push_back(i);
 		}
@@ -56,15 +41,15 @@ int BruteForce::findPath() {
 		int k = startVertex;
 
 		for (int i = 0; i < vertex.size(); i++) {
-			currentPathWeigh += graph[k][vertex[i]];
+			currentPathWeigh += graph[k][vertex[i]]; //bez zerowego
 			k = vertex[i];
 		}
-		currentPathWeigh += graph[k][startVertex]; //dodajemy wagê ostatniej krawêdzi
+		currentPathWeigh += graph[k][startVertex]; //dodajemy wage ostatniej krawadzi
 
-		minPath = min(minPath, currentPathWeigh);  //ruchy typu zamieñ
-	} while (next_permutation(vertex.begin(), vertex.end())); //zwraca true jeœli mo¿e zmieniæ obiekt w wiêksz¹ permutacjê
+		minPath = min(minPath, currentPathWeigh);  //zamien
+	} while (next_permutation(vertex.begin(), vertex.end())); //zwraca true jesli moze zmienic obiekt w wieksza permutacje
 
 
-	cout << minPath;
+	cout << "Minimalny koszt drogi:  " << minPath << endl;
 	return minPath;
 }

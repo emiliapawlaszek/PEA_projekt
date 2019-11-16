@@ -151,15 +151,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BranchAndBound.cpp" />
     <ClCompile Include="BruteForce.cpp" />
     <ClCompile Include="Data.cpp" />
+    <ClCompile Include="DynamicProgramming.cpp" />
     <ClCompile Include="PEA_projekt.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BranchAndBound.h" />
     <ClInclude Include="BruteForce.h" />
     <ClInclude Include="Data.h" />
+    <ClInclude Include="DynamicProgramming.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
