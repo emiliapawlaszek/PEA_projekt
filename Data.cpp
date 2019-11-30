@@ -3,7 +3,7 @@
 void Data::load(string name) {
 
 	fstream file;
-	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_proj\\rsrc\\" + name, ios::in);
+	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_projekt\\rsrc\\" + name, ios::in);
 
 	if (file.good() == false) {
 		cout << "Wrong path to the file" << endl;

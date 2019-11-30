@@ -12,6 +12,7 @@ using namespace std;
 class DynamicProgramming
 {
 public:
+	~DynamicProgramming();
 	string instance;
 	long int size; //rozmiar - liczba miast
 

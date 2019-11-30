@@ -1,9 +1,16 @@
 ﻿#include "BruteForce.h"
 
+BruteForce::BruteForce() {
+
+}
+BruteForce::~BruteForce() {
+	graph.erase(graph.begin());
+}
+
 void BruteForce::load(string name) {
 
 	fstream file;
-	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_proj\\rsrc\\" + name, ios::in);
+	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_projekt\\rsrc\\" + name, ios::in);
 	if (file.good())
 	{
 		file >> instance;

@@ -6,6 +6,7 @@
 #include "Data.h"
 #include "BruteForce.h"
 #include "DynamicProgramming.h"
+#include "Test.h"
 using namespace std;
 
 long long int read_QPC() //funkcja do pomiaru czasu
@@ -21,6 +22,7 @@ int main()
 	Data data;
 	BruteForce bruteForce;
 	DynamicProgramming dynamic;
+	Test test;
 
 	string name;
 	int counter = 1;
@@ -33,6 +35,7 @@ int main()
 	cout << "Algorytmy dokladne: " << endl;
 	cout << "4. Brute Force" << endl;
 	cout << "5. Dynamic Programming" << endl;
+	cout << "6. Testy automatyczne" << endl;
 	
 	while (counter > 0) {
 
@@ -84,6 +87,9 @@ int main()
 			cout << "Time [s] = " << fixed << setprecision(3) << (float)elapsed / frequency << endl;
 			cout << "Time [ms] = " << setprecision(0) << (1000.0 * elapsed) / frequency << endl;
 			cout << "Time [us] = " << setprecision(0) << (1000000.0 * elapsed) / frequency << endl << endl;
+		}
+		if (choice == 6) {
+			test.runTests();
 		}
 	}
 	return 0;

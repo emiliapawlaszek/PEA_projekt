@@ -1,9 +1,13 @@
 #include "DynamicProgramming.h"
 
+DynamicProgramming::~DynamicProgramming() {
+	graph.erase(graph.begin());
+	dp.erase(dp.begin());
+}
 void DynamicProgramming::load(string name)
 {
 	fstream file;
-	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_proj\\rsrc\\" + name, ios::in);
+	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_projekt\\rsrc\\" + name, ios::in);
 	if (file.good())
 	{
 		file >> instance;
@@ -58,13 +62,11 @@ int DynamicProgramming::algorithm(int mask, int pos) { //maska jakie ju¿ odwiedz
 }
 
 void DynamicProgramming::showSolution() {
-
 	//w celu zapamietywania naszych masek
 	for (int i = 0; i < (1 << size); i++) {
 		for (int j = 0; j < size; j++) {
 			dp[i][j] = -1;
 		}
 	}
-
-	cout << "Minimalny koszt drogi wed³ug algorytmu Dynamic Programming:  " << algorithm(1, 0) << endl;
+	cout << "Minimalny koszt drogi wedlug algorytmu Dynamic Programming:  " << algorithm(1, 0) << endl;
 }

@@ -12,7 +12,8 @@ using namespace std;
 class BruteForce
 {
 public:
-
+	BruteForce();
+	~BruteForce();
 	string instance;
 	long int size; //rozmiar - liczba miast
 	vector<vector<int>> graph; //macierz kosztow
