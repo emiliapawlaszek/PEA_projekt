@@ -9,7 +9,8 @@ Wykorzystane algorytmy:
   -  Programowanie dynamiczne (Dynamic Programming), Held–Karp
 
 
--in progress
+in progress
+
 2. Algorytmy lokalnego przeszukiwania:
   - Symulowane wyżarzanie (Simulated Annealing) 
   - Przeszukiwanie z zabronieniami (Tabu Search)
