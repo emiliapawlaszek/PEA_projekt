@@ -8,12 +8,9 @@ Wykorzystane algorytmy:
   -  Przegląd zupełny (Brute Force)
   -  Programowanie dynamiczne (Dynamic Programming), Held–Karp
 
-
-in progress
-
 2. Algorytmy lokalnego przeszukiwania:
-  - Symulowane wyżarzanie (Simulated Annealing) 
   - Przeszukiwanie z zabronieniami (Tabu Search)
   
+in progress  
 3. Algorytmy populacyjne:
   - Algorytm genetyczny (Genetic Algorithm)
