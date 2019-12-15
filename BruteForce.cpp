@@ -7,30 +7,6 @@ BruteForce::~BruteForce() {
 	graph.erase(graph.begin());
 }
 
-void BruteForce::load(string name) {
-
-	fstream file;
-	file.open("C:\\Users\\Student241279\\OneDrive\\programs\\PEA_projekt\\rsrc\\" + name, ios::in);
-	if (file.good())
-	{
-		file >> instance;
-		file >> size;
-		graph.resize(size);
-		for (int i = 0; i < size; i++) {
-			graph[i].resize(size);
-		}
-
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				file >> graph[i][j];
-			}
-		}
-	}
-	else {
-		cout << "Wrong path to the file" << endl;
-	}
-}
-
 int BruteForce::findPath() {
 
 	int startVertex = 0; //wirzcholek poczatkowy

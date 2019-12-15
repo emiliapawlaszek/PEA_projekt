@@ -12,7 +12,7 @@ class Data
 {
 public:
 	string instance;
-	long int number;
+	int number;
 	int** graph;
 	int sumOfEdgesFromRandomPath; 
 

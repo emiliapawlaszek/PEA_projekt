@@ -3,10 +3,13 @@
 #include <ctime>
 #include <windows.h>
 #include <iomanip> 
+#include <chrono>
 #include "Data.h"
 #include "BruteForce.h"
 #include "DynamicProgramming.h"
 #include "Test.h"
+#include "Matrix.h"
+#include "TabuSearch.h"
 using namespace std;
 
 long long int read_QPC() //funkcja do pomiaru czasu
@@ -19,23 +22,30 @@ long long int read_QPC() //funkcja do pomiaru czasu
 int main()
 {
 	srand(time(NULL));
+	Matrix matrix;
 	Data data;
 	BruteForce bruteForce;
 	DynamicProgramming dynamic;
 	Test test;
+	TabuSearch tabuSearch;
 
 	string name;
+	int time;
+	int times;
 	int counter = 1;
 	int choice;
 
+	cout << "Do wczytania danych uzyj opcji 1, a pozniej wybierz algorytm!!! " << endl;
 	cout << endl << "0.Wyjscie." << endl;
 	cout << "1.Wczytanie danych z pliku." << endl;
 	cout << "2.Wyswietlenie wczytanych danych." << endl;
 	cout << "3.Znalezenie przypadkowej trasy w grafie i policzenie wagi odpowiadajacej jej drogi." << endl;
-	cout << "Algorytmy dokladne: " << endl;
+	cout << "----------" << endl << "Algorytmy dokladne: " << endl;
 	cout << "4. Brute Force" << endl;
 	cout << "5. Dynamic Programming" << endl;
 	cout << "6. Testy automatyczne" << endl;
+	cout << "----------" << endl << " Algorytmy lokalnego przeszukiwania " << endl;
+	cout << "7.Tabu Search" << endl;
 	
 	while (counter > 0) {
 
@@ -49,9 +59,11 @@ int main()
 		if (choice == 1) {
 			cout << "Podaj nazwe pliku :";
 			cin >> name;
+			//name = "SMALL/data10.txt";
 			data.load(name);
-			bruteForce.load(name);
-			dynamic.load(name);
+			//dynamic.load(name);
+			//bruteForce.load(name);
+			tabuSearch.load(name);
 			cout << "Poprawnie wczytano dane." << endl;
 		}
 		if (choice == 2) {
@@ -91,6 +103,10 @@ int main()
 		if (choice == 6) {
 			test.runTests();
 		}
+		if (choice == 7) {
+			tabuSearch.solve();
+		}
 	}
+	system("pause");
 	return 0;
 }

@@ -6,18 +6,16 @@
 #include <ctime>
 #include <vector>
 #include <algorithm>
+#include "Matrix.h"
 using namespace std;
 
 
-class BruteForce
+class BruteForce :
+	public Matrix
 {
 public:
 	BruteForce();
 	~BruteForce();
-	string instance;
-	long int size; //rozmiar - liczba miast
-	vector<vector<int>> graph; //macierz kosztow
 
-	void load(string name);
 	int findPath();
 };

@@ -154,13 +154,17 @@
     <ClCompile Include="BruteForce.cpp" />
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="DynamicProgramming.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="PEA_projekt.cpp" />
+    <ClCompile Include="TabuSearch.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BruteForce.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="DynamicProgramming.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="TabuSearch.h" />
     <ClInclude Include="Test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

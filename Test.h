@@ -10,6 +10,7 @@
 #include "Data.h"
 #include "BruteForce.h"
 #include "DynamicProgramming.h"
+#include "TabuSearch.h"
 
 using namespace std;
 
@@ -20,7 +21,6 @@ class Test{
 	__int64 CounterStart = 0;
 
 public:
-	void generateNames();
 	void StartCounter();
 	double GetCounter();
 	void runTests();
