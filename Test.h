@@ -11,6 +11,7 @@
 #include "BruteForce.h"
 #include "DynamicProgramming.h"
 #include "TabuSearch.h"
+#include "GeneticAlgorithm.h"
 
 using namespace std;
 

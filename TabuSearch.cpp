@@ -10,9 +10,6 @@ TabuSearch::~TabuSearch() {
 	if (bestRoute.size() != 0) {
 		bestRoute.erase(bestRoute.begin(), bestRoute.end());
 	}
-	//if (graph.size() != 0) {
-	//	graph.erase(graph.begin(), graph.end());
-	//}
 }
 
 //wybor poczatkowego algorytmu: algorytm zachlanny. wybiera wierzcholek niezajety i o najmniejszej wadze.

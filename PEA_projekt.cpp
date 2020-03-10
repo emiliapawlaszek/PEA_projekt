@@ -10,6 +10,7 @@
 #include "Test.h"
 #include "Matrix.h"
 #include "TabuSearch.h"
+#include "GeneticAlgorithm.h"
 using namespace std;
 
 long long int read_QPC() //funkcja do pomiaru czasu
@@ -28,12 +29,18 @@ int main()
 	DynamicProgramming dynamic;
 	Test test;
 	TabuSearch tabuSearch;
+	GeneticAlgorithm genetic;
 
 	string name;
 	int time;
 	int times;
 	int counter = 1;
 	int choice;
+
+	int maxTime;
+	int count;
+	double mutation;
+	double cross;
 
 	cout << "Do wczytania danych uzyj opcji 1, a pozniej wybierz algorytm!!! " << endl;
 	cout << endl << "0.Wyjscie." << endl;
@@ -44,8 +51,10 @@ int main()
 	cout << "4. Brute Force" << endl;
 	cout << "5. Dynamic Programming" << endl;
 	cout << "6. Testy automatyczne" << endl;
-	cout << "----------" << endl << " Algorytmy lokalnego przeszukiwania " << endl;
-	cout << "7.Tabu Search" << endl;
+	cout << "----------" << endl << " Algorytm lokalnego przeszukiwania. " << endl;
+	cout << "7. Tabu Search" << endl;
+	cout << "----------" << endl << " Algorytm populacyjny. " << endl;
+	cout << "8. Algorytm genetyczny" << endl;
 	
 	while (counter > 0) {
 
@@ -63,7 +72,8 @@ int main()
 			data.load(name);
 			//dynamic.load(name);
 			//bruteForce.load(name);
-			tabuSearch.load(name);
+			//tabuSearch.load(name);
+			genetic.load(name);
 			cout << "Poprawnie wczytano dane." << endl;
 		}
 		if (choice == 2) {
@@ -106,7 +116,11 @@ int main()
 		if (choice == 7) {
 			tabuSearch.solve();
 		}
+		if (choice == 8) {
+			genetic.algorithm();
+			genetic.displayPopulation();
+		}
 	}
-	system("pause");
+	//system("pause");
 	return 0;
 }
