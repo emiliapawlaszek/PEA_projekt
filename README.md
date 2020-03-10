@@ -10,7 +10,6 @@ Wykorzystane algorytmy:
 
 2. Algorytmy lokalnego przeszukiwania:
   - Przeszukiwanie z zabronieniami (Tabu Search) -działa tak se, duże błędy
-  
-in progress  
+
 3. Algorytmy populacyjne:
   - Algorytm genetyczny (Genetic Algorithm)
